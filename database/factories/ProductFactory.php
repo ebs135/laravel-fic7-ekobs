@@ -9,18 +9,18 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ProductFactory extends Factory
 {
-  /**
-   * Define the model's default state.
-   *
-   * @return array<string, mixed>
-   */
-  public function definition(): array
-  {
-    return [
-      'name' => fake()->unique()->word(2),
-      'description' => fake()->text,
-      'price' => fake()->randomDigit,
-      'image_url' => fake()->imageUrl($width = 200, $height = 200),
-    ];
-  }
+	/**
+	 * Define the model's default state.
+	 *
+	 * @return array<string, mixed>
+	 */
+	public function definition(): array
+	{
+		return [
+			'name' => fake()->unique()->word(2),
+			'description' => fake()->text,
+			'price' => fake()->numberBetween(200000, 1000000),
+			'image_url' => fake()->imageUrl($width = 200, $height = 200),
+		];
+	}
 }
